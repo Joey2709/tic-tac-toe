@@ -28,6 +28,7 @@ h1 {
 #game-mode {
   color: white;
   font-size: 40px;
+  text-align: center;
 }
 
 body {
@@ -64,12 +65,20 @@ body {
   height: 600px;
 }
 
+.container {
+  width: 30vh;
+  max-width: 500px;
+  height: 30vh;
+  max-height: 500px;
+  position: relative;
+}
+
 .cell {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   font-family: "Quicksand", sans-serif;
-  font-size: 100px;
+  font-size: 350%;
   border: 1px solid rgb(0, 0, 0);
   user-select: none;
 }
@@ -179,4 +188,26 @@ button:focus:not(:focus-visible):before {
 
 button:not(:disabled):active {
   transform: translateY(0.125rem);
+}
+
+@media (max-width: 390px) {
+  .title h1 {
+    text-align: center;
+  }
+
+  .modal {
+    width: 100vw;
+  }
+
+  #winner {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 0.89rem;
+  }
+
+  .cell {
+    font-size: 200%;
+  }
 }

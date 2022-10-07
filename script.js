@@ -38,7 +38,7 @@ function activateHumanMode() {
 
 function activateComputerMode() {
   defaultGame();
-  gameMode.textContent = "Human vs Computer";
+  gameMode.textContent = "Human vs Bot";
   hvh = false;
 }
 
@@ -63,19 +63,21 @@ window.addEventListener("click", function (e) {
         return;
       }
       /*Computer Turn*/
-      if (winner == false) {
-        let numberComputer = computerPlay();
-        let cellComputer = clickedCell.parentNode.children[numberComputer];
-        setGame(currentValue, numberComputer);
-        setValue(cellComputer);
-        getWinner(game);
-        numberRound += 1;
-        if (winner == false && numberRound == 9) {
-          winnerGame.textContent = "Draw!";
-          onModal();
-          return;
+      setTimeout(() => {
+        if (winner == false) {
+          let numberComputer = computerPlay();
+          let cellComputer = clickedCell.parentNode.children[numberComputer];
+          setGame(currentValue, numberComputer);
+          setValue(cellComputer);
+          getWinner(game);
+          numberRound += 1;
+          if (winner == false && numberRound == 9) {
+            winnerGame.textContent = "Draw!";
+            onModal();
+            return;
+          }
         }
-      }
+      }, 300);
       return;
     }
 
