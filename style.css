@@ -114,9 +114,11 @@ body {
 .modal {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  width: 20%;
+  text-align: center;
+  gap: 15px;
+  width: 30%;
   height: 28%;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.8);
@@ -209,5 +211,15 @@ button:not(:disabled):active {
 
   .cell {
     font-size: 200%;
+  }
+}
+
+@media (min-width: 413px) and (max-width: 800px) {
+  .title h1 {
+    text-align: center;
+  }
+
+  .modal {
+    width: 45vw;
   }
 }
