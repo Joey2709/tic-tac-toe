@@ -190,7 +190,7 @@ button:not(:disabled):active {
   transform: translateY(0.125rem);
 }
 
-@media (max-width: 390px) {
+@media (max-width: 412px) {
   .title h1 {
     text-align: center;
   }
