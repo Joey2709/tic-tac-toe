@@ -166,15 +166,15 @@ function onModal() {
   if (winner == true || numberRound == 9) {
     setTimeout(() => {
       modalOpen.style.transform = "translate(300%,0)";
-    }, 9700);
+    }, 4700);
     setTimeout(() => {
       modalOpen.style.transform = "translate(0,0)";
-    }, 10200);
-    let count = 9;
+    }, 5200);
+    let count = 4;
     humanVsHuman.style.display = "none";
     humanVsComputer.style.display = "none";
     containerCount.style.display = "flex";
-    countText.textContent = 10;
+    countText.textContent = 5;
     var myInterval = setInterval(() => {
       countText.textContent = count--;
       if (count < 0) {
