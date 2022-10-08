@@ -164,12 +164,26 @@ function onModal() {
   modalOpen.style.transform = "translate(0,0)";
   turn.textContent = "";
   if (winner == true || numberRound == 9) {
+    modalOpen.style.height = "30%";
+    modalOpen.style.width = "20%";
+    modalOpen.style.backgroundColor = "rgba(255, 255, 255, 0.8) ";
+    modalOpen.style.backgroundImage = "none";
+    modalContainer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    winnerGame.style.color = "black";
     setTimeout(() => {
-      modalOpen.style.transform = "translate(300%,0)";
+      modalOpen.style.transform = "translate(350%,0)";
     }, 4700);
     setTimeout(() => {
       modalOpen.style.transform = "translate(0,0)";
-    }, 5200);
+      modalOpen.style.backgroundImage =
+        "linear-gradient(to top, #2b5876 0%, #4e4376 100%)";
+      modalOpen.style.height = "100%";
+      modalOpen.style.width = "100%";
+      winnerGame.style.color = "white";
+    }, 5700);
+    setTimeout(() => {
+      modalContainer.style.backgroundColor = "";
+    }, 6100);
     let count = 4;
     humanVsHuman.style.display = "none";
     humanVsComputer.style.display = "none";
@@ -193,7 +207,7 @@ function offModal() {
   setTimeout(function () {
     modalContainer.style.opacity = "0";
     modalContainer.style.visibility = "hidden";
-  }, 600);
+  }, 700);
 }
 
 defaultGame();
