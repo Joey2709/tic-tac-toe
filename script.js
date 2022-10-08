@@ -24,7 +24,7 @@ var results = [
 ];
 
 restartButton.addEventListener("click", defaultGame);
-restartButton.addEventListener("click", offModal);
+
 humanVsHuman.addEventListener("click", activateHumanMode);
 humanVsHuman.addEventListener("click", offModal);
 humanVsComputer.addEventListener("click", activateComputerMode);
@@ -161,9 +161,15 @@ var containerCount = document.getElementById("container-count");
 function onModal() {
   modalContainer.style.opacity = "1";
   modalContainer.style.visibility = "visible";
-  modalOpen.classList.toggle("modal-close");
+  modalOpen.style.transform = "translate(0,0)";
   turn.textContent = "";
   if (winner == true || numberRound == 9) {
+    setTimeout(() => {
+      modalOpen.style.transform = "translate(300%,0)";
+    }, 2700);
+    setTimeout(() => {
+      modalOpen.style.transform = "translate(0,0)";
+    }, 3200);
     let count = 2;
     humanVsHuman.style.display = "none";
     humanVsComputer.style.display = "none";
@@ -183,7 +189,7 @@ function onModal() {
 }
 
 function offModal() {
-  modalOpen.classList.toggle("modal-close");
+  modalOpen.style.transform = "translate(0,-500%)";
   setTimeout(function () {
     modalContainer.style.opacity = "0";
     modalContainer.style.visibility = "hidden";

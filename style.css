@@ -138,10 +138,6 @@ body {
   transform: translateY(0);
 }
 
-.modal-close {
-  transform: translateY(-500%);
-}
-
 /* CSS */
 button {
   background: #fff;
