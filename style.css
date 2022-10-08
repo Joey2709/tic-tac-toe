@@ -89,10 +89,21 @@ body {
   font-weight: 800;
 }
 
-#winner {
+#winner,
+#count {
   color: black;
   font-size: 35px;
   font-weight: 900;
+}
+
+#container-count {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border: 10px solid black;
+  border-radius: 50%;
 }
 
 /*MODAL*/
@@ -192,7 +203,7 @@ button:not(:disabled):active {
   transform: translateY(0.125rem);
 }
 
-@media (max-width: 412px) {
+@media (max-width: 415px) {
   .title h1 {
     text-align: center;
   }
@@ -214,12 +225,13 @@ button:not(:disabled):active {
   }
 }
 
-@media (min-width: 413px) and (max-width: 800px) {
+@media (min-width: 416px) and (max-width: 1080px) {
   .title h1 {
     text-align: center;
   }
 
   .modal {
-    width: 45vw;
+    height: 45vh;
+    width: 50vw;
   }
 }

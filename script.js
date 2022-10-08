@@ -1,8 +1,8 @@
 const container = document.getElementsByClassName("container");
 const restartButton = document.getElementById("restart");
-const humanVsHuman = document.getElementById("hvh");
-const humanVsComputer = document.getElementById("hvc");
 
+var humanVsHuman = document.getElementById("hvh");
+var humanVsComputer = document.getElementById("hvc");
 var gameMode = document.getElementById("game-mode");
 var turn = document.getElementById("turn");
 var winnerGame = document.getElementById("winner");
@@ -155,12 +155,31 @@ function computerPlay() {
 
 var modalContainer = document.getElementsByClassName("modal-container")[0];
 var modalOpen = document.getElementsByClassName("modal")[0];
+var countText = document.getElementById("count");
+var containerCount = document.getElementById("container-count");
 
 function onModal() {
   modalContainer.style.opacity = "1";
   modalContainer.style.visibility = "visible";
   modalOpen.classList.toggle("modal-close");
   turn.textContent = "";
+  if (winner == true || numberRound == 9) {
+    let count = 2;
+    humanVsHuman.style.display = "none";
+    humanVsComputer.style.display = "none";
+    containerCount.style.display = "flex";
+    countText.textContent = 3;
+    var myInterval = setInterval(() => {
+      countText.textContent = count--;
+      if (count < 0) {
+        clearInterval(myInterval);
+        winnerGame.textContent = "Select game mode";
+        humanVsHuman.style.display = "block";
+        humanVsComputer.style.display = "block";
+        containerCount.style.display = "none";
+      }
+    }, 1000);
+  }
 }
 
 function offModal() {
